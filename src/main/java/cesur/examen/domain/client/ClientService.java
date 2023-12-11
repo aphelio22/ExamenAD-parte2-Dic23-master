@@ -12,10 +12,13 @@ import java.util.Set;
  * EXAMEN DE ACCESO A DATOS
  * Diciembre 2023
  *
- * Nombre del alumno:
- * Fecha:
+ * Nombre del alumno: Jorge Alarcón Navarro
+ * Fecha: 11/12/2023
  */
 
+/**
+ * Métodos de servicio de Client.
+ */
 public class ClientService {
 
     /**
@@ -31,15 +34,12 @@ public class ClientService {
 
         CarDAO carDAO = new CarDAO();
         List<Car> cars = carDAO.getAllByManufacturer(manufacturer);
-
         Set<Client> uniqueClients = new HashSet<>();
         for (Car car : cars) {
             Client client = car.getClient();
             uniqueClients.add(client);
         }
-
         out.addAll(uniqueClients);
-
         return out;
     }
 }

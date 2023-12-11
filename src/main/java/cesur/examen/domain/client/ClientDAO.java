@@ -13,10 +13,13 @@ import java.util.List;
  * EXAMEN DE ACCESO A DATOS
  * Diciembre 2023
  *
- * Nombre del alumno:
- * Fecha:
+ * Nombre del alumno: Jorge Alarcón Navarro
+ * Fecha: 11/12/2023
  */
 
+/**
+ * Implementa métodos que realizan operaciones con Bases de Datos con Hibernate.
+ */
 @Log
 public class ClientDAO implements DAO<Client> {
     @Override
@@ -39,11 +42,13 @@ public class ClientDAO implements DAO<Client> {
         return null;
     }
 
-
+    /**
+     * Obtiene todos los Client.
+     * @return Lista de Client.
+     */
     @Override
     public List<Client> getAll() {
         var out = new ArrayList<Client>();
-
         /* Implement method here */
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             Query<Client> query = session.createQuery("from Client", Client.class);

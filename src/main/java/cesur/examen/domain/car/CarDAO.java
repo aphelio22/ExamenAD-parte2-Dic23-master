@@ -15,12 +15,21 @@ import java.util.List;
  * EXAMEN DE ACCESO A DATOS
  * Diciembre 2023
  *
- * Nombre del alumno:
- * Fecha:
+ * Nombre del alumno: Jorge Alarcón Navarro
+ * Fecha: 11/12/2023
  */
 
+/**
+ * Implementa métodos que realizan operaciones con Bases de Datos con Hibernate.
+ */
 @Log
 public class CarDAO implements DAO<Car> {
+
+    /**
+     * Guarda un Car en la Base de Datos.
+     * @param car
+     * @return Car guardado.
+     */
     @Override
     public Car save(Car car) {
 
@@ -61,9 +70,13 @@ public class CarDAO implements DAO<Car> {
         return null;
     }
 
+    /**
+     * Coge todos los Car que tienen un mismo manufacturador.
+     * @param manufacturer
+     * @return Todos los Car que obtiene.
+     */
     public List<Car> getAllByManufacturer(String manufacturer){
         var out = new ArrayList<Car>();
-
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Query<Car> query = session.createQuery("from Car where manufacturer = :manufacturer", Car.class);
             query.setParameter("manufacturer", manufacturer);
@@ -73,7 +86,4 @@ public class CarDAO implements DAO<Car> {
         }
         return out;
     }
-
-
-
 }

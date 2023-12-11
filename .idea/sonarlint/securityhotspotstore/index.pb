@@ -13,3 +13,5 @@ a
 1src/main/java/cesur/examen/domain/car/CarDAO.java,b\5\b5bed8f1e874a9ae272520c2d30e60a5d4ef3878
 k
 ;src/main/java/cesur/examen/domain/client/ClientService.java,a\7\a7d2d0adde89cac596a31c873f2939df8f17dc68
+Z
+*src/main/java/cesur/examen/common/DAO.java,1\d\1d5773011fe24857d86da84a75eb580ce15bee78
